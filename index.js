@@ -28,8 +28,8 @@ var fontWeights = {
 var fontMap = {};
 
 function asCss(cssData, size) {
-  css[2] = size + 'px';
-  return fontData.join(' ');
+  cssData[2] = size + 'px';
+  return cssData.join(' ');
 }
 
 function parseFont(font) {
