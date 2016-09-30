@@ -59,5 +59,5 @@ function parseFont(font) {
 
 module.exports = {
   parseFont: parseFont,
-  asCss: fontAsCss
+  asCss: asCss
 }
