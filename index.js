@@ -51,7 +51,8 @@ module.exports = function(font, size) {
     }
     var fontFamily = parts.join(' ');
     // CSS font property: font-style font-weight font-size font-family
-    cssData = fontCache[font] = [style, weight, 16, fontFamily];
+    cssData = fontCache[font] = [style, weight, 0, fontFamily];
   }
   cssData[2] = size + 'px';
+  return cssData;
 }
