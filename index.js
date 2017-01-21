@@ -54,5 +54,5 @@ module.exports = function(font, size) {
     cssData = fontCache[font] = [style, weight, 0, fontFamily];
   }
   cssData[2] = size + 'px';
-  return cssData;
+  return cssData.join(' ');
 }
