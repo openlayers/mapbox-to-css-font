@@ -24,6 +24,7 @@ var fontWeights = {
   fat: 900,
   poster: 900
 };
+var sp = ' ';
 
 var fontCache = {};
 
@@ -51,8 +52,7 @@ module.exports = function(font, size) {
     }
     var fontFamily = parts.join(' ');
     // CSS font property: font-style font-weight font-size font-family
-    cssData = fontCache[font] = [style, weight, 0, fontFamily];
+    cssData = fontCache[font] = [style, weight, fontFamily];
   }
-  cssData[2] = size + 'px';
-  return cssData.join(' ');
+  return cssData[0] + sp + cssData[1] + sp + size + 'px' + sp + cssData[2];
 }
