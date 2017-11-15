@@ -51,6 +51,9 @@ module.exports = function(font, size) {
       weight = maybeWeight;
     }
     var fontFamily = parts.join(' ');
+    if (fontFamily.indexOf(' ') !== -1) {
+      fontFamily = '"' + fontFamily + '"';
+    }
     // CSS font property: font-style font-weight font-size font-family
     cssData = fontCache[font] = [style, weight, fontFamily];
   }
