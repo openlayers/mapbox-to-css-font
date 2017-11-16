@@ -7,7 +7,7 @@ Utility to convert Mapbox GL Style font names to CSS compatible font definitions
 ```js
 var parseFont = require('mapbox-to-css-font');
 parseFont('Open Sans Regular', 16);
-// returns 'normal 400 16px Open Sans'
+// returns 'normal 400 16px "Open Sans"'
 ```
 
 ## API
@@ -18,4 +18,4 @@ parseFont('Open Sans Regular', 16);
 
 -  `size` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Font size in pixels.
 
-Returns **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** CSS font definition, e.g. `'normal 400 16px Open Sans'`.
+Returns **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** CSS font definition, e.g. `'normal 400 16px "Open Sans"'`.
