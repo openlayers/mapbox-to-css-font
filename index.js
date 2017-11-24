@@ -50,7 +50,8 @@ module.exports = function(font, size) {
     if (typeof maybeWeight == 'number') {
       weight = maybeWeight;
     }
-    var fontFamily = parts.join(' ');
+    var fontFamily = parts.join(' ')
+        .replace('Klokantech Noto Sans', 'Noto Sans');
     if (fontFamily.indexOf(' ') !== -1) {
       fontFamily = '"' + fontFamily + '"';
     }

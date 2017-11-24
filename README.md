@@ -2,6 +2,8 @@
 
 Utility to convert Mapbox GL Style font names to CSS compatible font definitions.
 
+The ["Klokantech Noto Sans"](https://github.com/klokantech/klokantech-gl-fonts) font is recognized and returned as "Noto Sans", so it can be loaded as web font from Google fonts.
+
 ## Usage
 
 ```js
