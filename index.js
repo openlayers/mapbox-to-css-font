@@ -25,38 +25,51 @@ var fontWeights = {
   poster: 900
 };
 var sp = ' ';
+var italicRE = /(italic|oblique)$/i;
 
 var fontCache = {};
 
-module.exports = function(font, size) {
-  var cssData = fontCache[font];
+module.exports = function(fonts, size) {
+  var cssData = fontCache[fonts];
   if (!cssData) {
-    var parts = font.split(' ');
-    var maybeWeight = parts[parts.length - 1].toLowerCase();
+    if (!Array.isArray(fonts)) {
+      fonts = [fonts];
+    }
     var weight = 'normal';
     var style = 'normal';
-    if (maybeWeight == 'normal' || maybeWeight == 'italic' || maybeWeight == 'oblique') {
-      style = maybeWeight;
-      parts.pop();
-      maybeWeight = parts[parts.length - 1].toLowerCase();
-    }
-    for (var w in fontWeights) {
-      if (maybeWeight == w || maybeWeight == w.replace('-', '') || maybeWeight == w.replace('-', ' ')) {
-        weight = fontWeights[w];
+    var fontFamilies = []
+    var haveWeight, haveStyle;
+    for (var i = 0, ii = fonts.length; i < ii; ++i) {
+      var font = fonts[i];
+      var parts = font.split(' ');
+      var maybeWeight = parts[parts.length - 1].toLowerCase();
+      if (maybeWeight == 'normal' || maybeWeight == 'italic' || maybeWeight == 'oblique') {
+        style = haveStyle ? style : maybeWeight;
         parts.pop();
-        break;
+        maybeWeight = parts[parts.length - 1].toLowerCase();
+      } else if (italicRE.test(maybeWeight)) {
+        maybeWeight = maybeWeight.replace(italicRE, '');
+        style = haveStyle ? style : parts[parts.length - 1].replace(maybeWeight, '');
       }
-    }
-    if (typeof maybeWeight == 'number') {
-      weight = maybeWeight;
-    }
-    var fontFamily = parts.join(' ')
-        .replace('Klokantech Noto Sans', 'Noto Sans');
-    if (fontFamily.indexOf(' ') !== -1) {
-      fontFamily = '"' + fontFamily + '"';
+      for (var w in fontWeights) {
+        if (maybeWeight == w || maybeWeight == w.replace('-', '') || maybeWeight == w.replace('-', sp)) {
+          weight = haveWeight ? weight : fontWeights[w];
+          parts.pop();
+          break;
+        }
+      }
+      if (!haveWeight && typeof maybeWeight == 'number') {
+        weight = maybeWeight;
+      }
+      var fontFamily = parts.join(sp)
+          .replace('Klokantech Noto Sans', 'Noto Sans');
+      if (fontFamily.indexOf(sp) !== -1) {
+        fontFamily = '"' + fontFamily + '"';
+      }
+      fontFamilies.push(fontFamily);
     }
     // CSS font property: font-style font-weight font-size font-family
-    cssData = fontCache[font] = [style, weight, fontFamily];
+    cssData = fontCache[fonts] = [style, weight, fontFamilies];
   }
   return cssData[0] + sp + cssData[1] + sp + size + 'px' + sp + cssData[2];
 }
