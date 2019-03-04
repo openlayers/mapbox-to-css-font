@@ -1,0 +1,6 @@
+{
+  "extends": "openlayers",
+  "rules": {
+    "no-var": "off"
+  }
+}
