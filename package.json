@@ -1,11 +1,11 @@
 {
   "name": "mapbox-to-css-font",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Utility to convert Mapbox GL Style font names to CSS font definitions",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/boundlessgeo/mapbox-to-css-font.git"
+    "url": "git://github.com/openlayers/mapbox-to-css-font.git"
   },
   "keywords": [
     "mapbox",
