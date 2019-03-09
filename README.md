@@ -10,8 +10,8 @@ The ["Klokantech Noto Sans"](https://github.com/klokantech/klokantech-gl-fonts) 
 
 ```js
 var parseFont = require('mapbox-to-css-font');
-parseFont('Open Sans Regular', 16);
-// returns 'normal 400 16px "Open Sans"'
+parseFont('Open Sans Regular', 16, 1.2);
+// returns 'normal 400 16px/1.2 "Open Sans"'
 ```
 
 ## API
@@ -22,4 +22,6 @@ parseFont('Open Sans Regular', 16);
 
 -  `size` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Font size in pixels.
 
-Returns **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** CSS font definition, e.g. `'normal 400 16px "Open Sans"'`.
+- `lineHeight` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)|[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Line height as css [line-height](https://developer.mozilla.org/en-US/docs/Web/CSS/line-height). Optional.
+
+Returns **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** CSS font definition, e.g. `'normal 400 16px/1.2 "Open Sans"'`.

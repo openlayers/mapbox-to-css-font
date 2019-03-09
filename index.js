@@ -29,7 +29,7 @@ var italicRE = /(italic|oblique)$/i;
 
 var fontCache = {};
 
-module.exports = function(fonts, size) {
+module.exports = function(fonts, size, lineHeight) {
   var cssData = fontCache[fonts];
   if (!cssData) {
     if (!Array.isArray(fonts)) {
@@ -68,8 +68,8 @@ module.exports = function(fonts, size) {
       }
       fontFamilies.push(fontFamily);
     }
-    // CSS font property: font-style font-weight font-size font-family
+    // CSS font property: font-style font-weight font-size/line-height font-family
     cssData = fontCache[fonts] = [style, weight, fontFamilies];
   }
-  return cssData[0] + sp + cssData[1] + sp + size + 'px' + sp + cssData[2];
+  return cssData[0] + sp + cssData[1] + sp + size + 'px' + (lineHeight ? '/' + lineHeight : '') + sp + cssData[2];
 }
