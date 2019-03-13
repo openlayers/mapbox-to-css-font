@@ -35,7 +35,7 @@ module.exports = function(fonts, size, lineHeight) {
     if (!Array.isArray(fonts)) {
       fonts = [fonts];
     }
-    var weight = 'normal';
+    var weight = 400;
     var style = 'normal';
     var fontFamilies = []
     var haveWeight, haveStyle;
