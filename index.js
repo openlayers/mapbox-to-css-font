@@ -37,7 +37,7 @@ module.exports = function(fonts, size, lineHeight) {
     }
     var weight = 400;
     var style = 'normal';
-    var fontFamilies = []
+    var fontFamilies = [];
     var haveWeight, haveStyle;
     for (var i = 0, ii = fonts.length; i < ii; ++i) {
       var font = fonts[i];
@@ -62,7 +62,7 @@ module.exports = function(fonts, size, lineHeight) {
         weight = maybeWeight;
       }
       var fontFamily = parts.join(sp)
-          .replace('Klokantech Noto Sans', 'Noto Sans');
+        .replace('Klokantech Noto Sans', 'Noto Sans');
       if (fontFamily.indexOf(sp) !== -1) {
         fontFamily = '"' + fontFamily + '"';
       }
@@ -72,4 +72,4 @@ module.exports = function(fonts, size, lineHeight) {
     cssData = fontCache[fonts] = [style, weight, fontFamilies];
   }
   return cssData[0] + sp + cssData[1] + sp + size + 'px' + (lineHeight ? '/' + lineHeight : '') + sp + cssData[2];
-}
+};

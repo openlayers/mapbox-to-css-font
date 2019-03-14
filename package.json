@@ -12,5 +12,12 @@
     "font"
   ],
   "author": "Andreas Hocevar",
-  "license": "BSD-2-Clause"
+  "license": "BSD-2-Clause",
+  "scripts": {
+    "lint": "eslint *.js"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.0",
+    "eslint-config-openlayers": "^11.0.0"
+  }
 }
