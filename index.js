@@ -1,9 +1,9 @@
 var fontWeights = {
   thin: 100,
   hairline: 100,
-  'ultra-light': 100,
-  'extra-light': 100,
-  light: 200,
+  'ultra-light': 200,
+  'extra-light': 200,
+  light: 300,
   book: 300,
   regular: 400,
   normal: 400,
@@ -14,15 +14,15 @@ var fontWeights = {
   'semi-bold': 600,
   'demi-bold': 600,
   bold: 700,
-  heavy: 800,
-  black: 800,
   'extra-bold': 800,
-  'ultra-black': 900,
-  'extra-black': 900,
-  'ultra-bold': 900,
+  'ultra-bold': 800,
+  heavy: 900,
+  black: 900,
   'heavy-black': 900,
   fat: 900,
-  poster: 900
+  poster: 900,
+  'ultra-black': 950,
+  'extra-black': 950
 };
 var sp = ' ';
 var italicRE = /(italic|oblique)$/i;
