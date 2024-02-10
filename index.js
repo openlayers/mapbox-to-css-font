@@ -45,11 +45,13 @@ module.exports = function(fonts, size, lineHeight) {
       var maybeWeight = parts[parts.length - 1].toLowerCase();
       if (maybeWeight == 'normal' || maybeWeight == 'italic' || maybeWeight == 'oblique') {
         style = haveStyle ? style : maybeWeight;
+        haveStyle = true;
         parts.pop();
         maybeWeight = parts[parts.length - 1].toLowerCase();
       } else if (italicRE.test(maybeWeight)) {
         maybeWeight = maybeWeight.replace(italicRE, '');
         style = haveStyle ? style : parts[parts.length - 1].replace(maybeWeight, '');
+        haveStyle = true;
       }
       for (var w in fontWeights) {
         var previousPart = parts.length > 1 ? parts[parts.length - 2].toLowerCase() : '';
@@ -64,6 +66,7 @@ module.exports = function(fonts, size, lineHeight) {
       }
       if (!haveWeight && typeof maybeWeight == 'number') {
         weight = maybeWeight;
+        haveWeight = true;
       }
       var fontFamily = parts.join(sp)
         .replace('Klokantech Noto Sans', 'Noto Sans');
