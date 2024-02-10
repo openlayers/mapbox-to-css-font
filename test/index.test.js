@@ -17,6 +17,10 @@ describe('mapbox-to-css-font', function() {
       should(parseFont('monospace', 16, 3.5)).eql('normal 400 16px/3.5 monospace');
       should(parseFont('monospace', 16, '3em')).eql('normal 400 16px/3em monospace');
     });
+
+    it('use style and weight from primary font', function() {
+      should(parseFont(['monospace medium Italic', 'sans-serif Normal'], 16)).eql('italic 500 16px monospace,sans-serif');
+    });
   });
 
 });
