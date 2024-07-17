@@ -9,7 +9,8 @@ The ["Klokantech Noto Sans"](https://github.com/klokantech/klokantech-gl-fonts) 
 ## Usage
 
 ```js
-var parseFont = require('mapbox-to-css-font');
+import parseFont = from 'mapbox-to-css-font';
+
 parseFont('Open Sans Regular', 16, 1.2);
 // returns 'normal 400 16px/1.2 "Open Sans"'
 ```
