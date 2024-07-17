@@ -29,7 +29,13 @@ var italicRE = /(italic|oblique)$/i;
 
 var fontCache = {};
 
-module.exports = function(fonts, size, lineHeight) {
+/**
+ * @param {string|Array<string>} fonts Mapbox GL Style fontstack or single font, e.g. `['Open Sans Regular', 'Arial Unicode MS Regular']` or `'Open Sans Regular'`.
+ * @param {number} size Font size in pixels.
+ * @param {string|number} [lineHeight] Line height as css line-height.
+ * @returns {string} CSS font definition, e.g. `'normal 400 16px/1.2 "Open Sans"'`.
+ */
+export default function(fonts, size, lineHeight) {
   var cssData = fontCache[fonts];
   if (!cssData) {
     if (!Array.isArray(fonts)) {
@@ -79,4 +85,4 @@ module.exports = function(fonts, size, lineHeight) {
     cssData = fontCache[fonts] = [style, weight, fontFamilies];
   }
   return cssData[0] + sp + cssData[1] + sp + size + 'px' + (lineHeight ? '/' + lineHeight : '') + sp + cssData[2];
-};
+}
