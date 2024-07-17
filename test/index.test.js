@@ -1,6 +1,6 @@
 /* eslint-env mocha */
-const should = require('should');
-const parseFont = require('../index.js');
+import should from 'should';
+import parseFont from '../index.js';
 
 describe('mapbox-to-css-font', function() {
 

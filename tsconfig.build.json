@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "lib": ["es2015"],
+    "declaration": true,
+    "declarationMap": true
+  },
+  "include": ["**/*.js"],
+  "exclude": ["node_modules", "test"]
+}
