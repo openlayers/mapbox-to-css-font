@@ -3,6 +3,7 @@
   "version": "2.4.5",
   "description": "Utility to convert Mapbox GL Style font names to CSS font definitions",
   "main": "index.js",
+  "types": "index.d.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/openlayers/mapbox-to-css-font.git"
