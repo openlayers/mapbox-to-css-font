@@ -22,6 +22,7 @@
     "test": "mocha test/index.test.js",
     "prepare": "tsc --emitDeclarationOnly -p tsconfig.build.json"
   },
+  "main": "index.js",
   "devDependencies": {
     "eslint": "^5.15.0",
     "eslint-config-openlayers": "^11.0.0",
