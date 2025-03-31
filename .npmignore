@@ -1,3 +1,6 @@
-.circleci/
+.github/
 test/
 .eslintrc
+.gitignore
+node_modules/
+tsconfig*
