@@ -75,7 +75,8 @@ export default function(fonts, size, lineHeight) {
         haveWeight = true;
       }
       var fontFamily = parts.join(sp)
-        .replace('Klokantech Noto Sans', 'Noto Sans');
+        .replace('Klokantech Noto Sans', 'Noto Sans')
+        .replace('DIN Pro', 'Barlow');
       if (fontFamily.indexOf(sp) !== -1) {
         fontFamily = '"' + fontFamily + '"';
       }

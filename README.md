@@ -4,7 +4,10 @@ Utility to convert Mapbox GL Style fontstacks or fonts names to CSS compatible f
 
 For fontstacks, the style and weight of the primary font (first font in the fontstack) will also be used for the fallback fonts.
 
-The ["Klokantech Noto Sans"](https://github.com/klokantech/klokantech-gl-fonts) font is recognized and returned as "Noto Sans", so it can be loaded as web font from Google fonts.
+| Mapbox Font Name          | Replacement Font Name |
+|---------------------------|-----------------------|
+| Klokantech Noto Sans      | Noto Sans            |
+| DIN Pro                   | Barlow               |
 
 ## Usage
 
