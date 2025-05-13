@@ -1,6 +1,6 @@
 {
   "name": "mapbox-to-css-font",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "Utility to convert Mapbox GL Style font names to CSS font definitions",
   "type": "module",
   "module": "index.js",
