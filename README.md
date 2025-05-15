@@ -4,12 +4,13 @@ Utility to convert Mapbox/MapLibre GL Style fontstacks or fonts names to CSS com
 
 For fontstacks, the style and weight of the primary font (first font in the fontstack) will also be used for the fallback fonts.
 
-Fonts commonly found in Mapbox/MapLibre styles, which are not available as free fonts on [Fontsource](https://fontsource.org/) or [Google Fonts](https://fonts.google.com/), will be replaced with a close match:
+Fonts commonly found in Mapbox/MapLibre styles, which are not available as systm fonts or free fonts on [Fontsource](https://fontsource.org/) or [Google Fonts](https://fonts.google.com/), will be replaced with a close match:
 
 | Mapbox/MapLibre Font Name | Replacement Font Name |
 |---------------------------|-----------------------|
-| Klokantech Noto Sans      | Noto Sans             |
+| Arial Unicode MS          | Arial                 |
 | DIN Pro                   | Barlow                |
+| Klokantech Noto Sans      | Noto Sans             |
 
 ## Usage
 

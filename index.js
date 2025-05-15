@@ -76,7 +76,8 @@ export default function(fonts, size, lineHeight) {
       }
       var fontFamily = parts.join(sp)
         .replace('Klokantech Noto Sans', 'Noto Sans')
-        .replace('DIN Pro', 'Barlow');
+        .replace('DIN Pro', 'Barlow')
+        .replace('Arial Unicode MS', 'Arial');
       if (fontFamily.indexOf(sp) !== -1) {
         fontFamily = '"' + fontFamily + '"';
       }
