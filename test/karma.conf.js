@@ -1,17 +1,19 @@
 const path = require('path');
 
-module.exports = function(karma) {
+module.exports = function (karma) {
   karma.set({
     frameworks: ['mocha'],
-    files: [{
-      pattern: path.resolve(__dirname, './index.test.js')
-    }],
+    files: [
+      {
+        pattern: path.resolve(__dirname, './index.test.js'),
+      },
+    ],
     preprocessors: {
-      '**/*.js': ['webpack']
+      '**/*.js': ['webpack'],
     },
     webpack: {
-      mode: 'development'
+      mode: 'development',
     },
-    browsers: ['ChromeHeadless']
+    browsers: ['ChromeHeadless'],
   });
 };
