@@ -15,6 +15,18 @@ describe('mapbox-to-css-font', function () {
       should(parseFont('Inter Semi Bold', 16)).eql('normal 600 16px Inter');
     });
 
+    it('handle snake case font names', function () {
+      should(parseFont('noto_sans_regular', 16)).eql(
+        'normal 400 16px "Noto Sans"',
+      );
+      should(parseFont('noto_sans_bold', 16)).eql(
+        'normal 700 16px "Noto Sans"',
+      );
+      should(parseFont('noto_sans_semibold_italic', 16)).eql(
+        'italic 600 16px "Noto Sans"',
+      );
+    });
+
     it('handle line-height', function () {
       should(parseFont('monospace', 16)).eql('normal 400 16px monospace');
       should(parseFont('monospace', 16, 3.5)).eql(
