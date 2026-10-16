@@ -26,6 +26,23 @@ const fontWeights = {
 };
 const sp = ' ';
 const italicRE = /(italic|oblique)$/i;
+const snakeCaseRE = /_/g;
+const wordStartRE = /(^| )[a-z]/g;
+
+/**
+ * @param {string} font Font name, e.g. `'noto_sans_bold'` or `'Noto Sans Bold'`.
+ * @return {string} Font name with words separated by spaces, e.g. `'Noto Sans Bold'`.
+ */
+function toWords(font) {
+  if (font.indexOf('_') === -1) {
+    return font;
+  }
+  // Snake case names, e.g. from VersaTiles styles, are all lower case.
+  // Capitalized words match the family names that font services use.
+  return font
+    .replace(snakeCaseRE, sp)
+    .replace(wordStartRE, (wordStart) => wordStart.toUpperCase());
+}
 
 const fontCache = {};
 
@@ -46,7 +63,7 @@ export default function (fonts, size, lineHeight) {
     const fontFamilies = [];
     let haveWeight, haveStyle;
     for (let i = 0, ii = fonts.length; i < ii; ++i) {
-      const font = fonts[i];
+      const font = toWords(fonts[i]);
       const parts = font.split(' ');
       let maybeWeight = parts[parts.length - 1].toLowerCase();
       if (
